@@ -1,7 +1,7 @@
 // Person Y
 // how many student objects -> 0
 println Student.count
-def s1 = new Student('mehul', 'm' as Character, 10, 90)
+def s1 = new Student(name: 'mehul', gender: 'o' as Character, roll: 10, marks: 90)
 // new -> 4003
 // Student('mehul', 'm', 10, 90) -> Student('mehul', 'm', 10, 90, 4003)
 
@@ -18,9 +18,9 @@ println Student.getMinimumAttendance() // Student.getMinimumAttendance()
 
 // getting the properties
 /* println s1
-println s1.name
+println s1.name // s1.getName()
 println s2.name
-println s1.roll
+println s1.roll // s1.getRoll()
 println s2.roll */
 
 // setting the properties
@@ -29,10 +29,13 @@ s1.gender = 'm'
 s1.roll = 10
 s1.marks = 90 */
 
-s2.name = 'jane'
-s2.gender = 'f'
-s2.roll = 13
+// setting properties on an object
+s2.name = 'jane' // s2.setName('jane')
+s2.gender = 'f' // gender property shud take in only m or f. s2.setGender('o')
+s2.roll = 13 // s2.setRoll(13)
 s2.marks = 80
+
+// dot access converting to setter and getter function calls happens only from outside the class
 
 def r1 = s1.getDetails()
 // Student.getDetails(s1)
