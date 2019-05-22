@@ -1,0 +1,102 @@
+// OPENED: Wed May 22 22:48:34 IST 2019
+// RESULT: /var/folders/w3/q6tg9hdn019d3pzd0p1j1j41hfwv9x/T/groovysh-4038038457143876604.txt
+m1
+// RESULT: [[5, 6, 3], [3, 2, 1], [7, 3, 4]]
+nos
+// RESULT: [5, 6, 10, 6, 5, 4, 2, 1]
+nos.sort()
+// RESULT: [1, 2, 4, 5, 5, 6, 6, 10]
+noos
+nos
+// RESULT: [1, 2, 4, 5, 5, 6, 6, 10]
+def nos = [5, 6, 10, 6, 5, 4, 2, 1]
+// RESULT: [5, 6, 10, 6, 5, 4, 2, 1]
+def asc = nos.sort(false)
+// RESULT: [1, 2, 4, 5, 5, 6, 6, 10]
+asc
+// RESULT: [1, 2, 4, 5, 5, 6, 6, 10]
+nos
+// RESULT: [5, 6, 10, 6, 5, 4, 2, 1]
+nos
+// RESULT: [5, 6, 10, 6, 5, 4, 2, 1]
+def desclist = nos.sort(false) {ele1, ele2 -> ele2.compareTo(ele1) }
+// RESULT: [10, 6, 6, 5, 5, 4, 2, 1]
+nos
+// RESULT: [5, 6, 10, 6, 5, 4, 2, 1]
+def m = [:]
+// RESULT: [:]
+m.class
+// RESULT: null
+m.getClass()
+// RESULT: class java.util.LinkedHashMap
+def smap = [23: 'mehul', 12: 'jane']
+// RESULT: [23:mehul, 12:jane]
+smap.getClass()
+// RESULT: class java.util.LinkedHashMap
+smap.putAt(12, 'Jane')
+// RESULT: Jane
+smap
+// RESULT: [23:mehul, 12:Jane]
+smap[23] = 'Mehul'
+// RESULT: Mehul
+smap
+// RESULT: [23:Mehul, 12:Jane]
+smap.getAt(12)
+// RESULT: Jane
+smap.getAt(23)
+// RESULT: Mehul
+smap[12]
+// RESULT: Jane
+smap[23]
+// RESULT: Mehul
+smap
+// RESULT: [23:Mehul, 12:Jane]
+smap[34] = 'Jill'
+// RESULT: Jill
+smap
+// RESULT: [23:Mehul, 12:Jane, 34:Jill]
+for (s in smap) {
+  println s
+}
+// RESULT: null
+for (s in smap) {
+  println s.class
+}
+// RESULT: null
+smap
+// RESULT: [23:Mehul, 12:Jane, 34:Jill]
+for(entry in smap) {
+  println "Roll : ${entry.key}"
+  println "Name : ${entry.value}"
+}
+// RESULT: null
+smap.keySet()
+// RESULT: [23, 12, 34]
+smap.values()
+// RESULT: [Mehul, Jane, Jill]
+smap.size()
+// RESULT: 3
+smap
+// RESULT: [23:Mehul, 12:Jane, 34:Jill]
+smap.each {
+  println "Roll : ${it.key}"
+  println "Name : ${it.value}"
+}
+// RESULT: [23:Mehul, 12:Jane, 34:Jill]
+smap.each {roll, name ->
+  println "Roll : ${roll}"
+  println "Name : ${name}"
+}
+// RESULT: [23:Mehul, 12:Jane, 34:Jill]
+smap
+// RESULT: [23:Mehul, 12:Jane, 34:Jill]
+smap
+// RESULT: [23:Mehul, 12:Jane, 34:Jill]
+smap
+// RESULT: [23:Mehul, 12:Jane, 34:Jill]
+smap.remove(12)
+// RESULT: Jane
+smap
+// RESULT: [23:Mehul, 34:Jill]
+:record stop
+// CLOSED: Thu May 23 00:35:12 IST 2019
