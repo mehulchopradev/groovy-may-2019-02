@@ -4,6 +4,8 @@
 // its not an ordered data structure
 // is mutable
 // key is suppose to be unique in a map
+import com.xyz.college.domain.Student
+
 def studentMap = [
   10: new Student('mehul', 'm' as Character, 10, 90),
   12: new Student('jane', 'f' as Character, 12, 80),

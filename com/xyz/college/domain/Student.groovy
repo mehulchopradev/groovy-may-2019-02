@@ -6,6 +6,8 @@
 // single object per class
 // Class
 
+package com.xyz.college.domain
+
 // Groovy Bean
 class Student {
   // instance variables
@@ -13,6 +15,11 @@ class Student {
   Character gender
   Integer roll
   Float marks
+  List contactNos
+  Address address
+  // Student has-a Address
+  // Composition relationship
+  // Delete student - Delete address
 
   // for each of the properties defined, Groovy bean creates automatic getter/setter function
 
@@ -47,7 +54,16 @@ class Student {
     // this -> current object
     // String interpolation -> ""
     // GString
-    "Name : ${this.name}\nGender : ${this.gender}\nRoll : ${this.roll}\nMarks : ${this.marks}"
+    def part1 = "Name : ${this.name}\nGender : ${this.gender}\nRoll : ${this.roll}\nMarks : ${this.marks}\n"
+    def part2 = ''
+
+    this.contactNos.each { // null.each takes it as no iteration needed rather than flagging a error
+      part2 += it + '\n'
+    }
+
+    def part3 = this.address?.getDetails() // null safe operator ?.
+
+    part1 + part2 + (part3 ?: 'No Address!') // elvis operator ?:
   }
 
   static def getMinimumAttendance() {
@@ -64,6 +80,34 @@ class Student {
       // does happen when in the default map based constructor
     } else {
       this.gender = null
+    }
+  }
+
+  /* def addToContacts(String contact) {
+    if (this.contactNos == null) {
+      this.contactNos = []
+    }
+
+    this.contactNos << contact
+  } */
+
+  def leftShift(String contact) {
+    if (this.contactNos == null) {
+      this.contactNos = []
+    }
+
+    this.contactNos << contact
+  }
+
+  def rightShift(String contact) {
+    if (this.contactNos) {
+      this.contactNos.removeElement contact
+    }
+  }
+
+  def plus(Student other) {
+    if (this.contactNos) {
+      this.contactNos.addAll(other.contactNos)
     }
   }
 }

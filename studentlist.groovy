@@ -1,3 +1,5 @@
+import com.xyz.college.domain.Student
+
 def studentlist = [
   new Student('mehul', 'm' as Character, 10, 90), // positional parameters
   new Student([name: 'jane', gender: 'f' as Character, roll: 12, marks: 80]), // map (keyword parameters)
