@@ -73,6 +73,9 @@ s2 >> '8637482348' // removing a contact
 
 println s2.getDetails()
 
+PhotoSession.takePhoto s1
+PhotoSession.takePhoto s2
+
 /* println s1.name
 println s2.name
 println s1.roll

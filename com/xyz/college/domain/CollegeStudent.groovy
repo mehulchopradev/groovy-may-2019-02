@@ -1,8 +1,10 @@
 package com.xyz.college.domain
 
+import com.xyz.common.DataType
+
 // concrete class/child class/sub class
 // Groovy bean
-class CollegeStudent extends CollegeUser {
+class CollegeStudent extends CollegeUser implements DataType {
   Integer roll
   Float marks
 
